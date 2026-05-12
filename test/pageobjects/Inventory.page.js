@@ -1,0 +1,27 @@
+class InventoryPage {
+    get shoppingCartBtn() { return $('[data-test="shopping-cart-link"]'); }
+    get cartItems() { return $$('.cart_item'); }
+    get title() { return $('.title') }
+    get checkoutBtn() { return $('#checkout') }
+    get continueBtn() { return $('#continue') }
+
+get errorMessage() { return $('[data-test="error"]') }
+
+async clickContinueBtn() {
+    await this.continueBtn.waitForClickable({ timeout: 10000 })
+    await this.continueBtn.click()
+}
+
+    async clickShoppingCartBtn() {
+    await this.shoppingCartBtn.waitForClickable({ timeout: 10000 })
+    await this.shoppingCartBtn.click();
+ }
+
+    async clickCheckoutBtn() {
+    await this.checkoutBtn.waitForClickable({ timeout: 10000 })
+    await this.checkoutBtn.click()
+
+}
+}
+
+export default new InventoryPage()
