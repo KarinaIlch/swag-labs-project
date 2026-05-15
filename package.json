@@ -9,5 +9,8 @@
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
   }
 }
