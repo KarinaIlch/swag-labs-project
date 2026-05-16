@@ -2,13 +2,13 @@ import LoginPage from "../pageObjects/LoginPage";
 import ProductsPage from "../pageObjects/ProductsPage";
 
 describe("Product sorting", () => {
-  beforeEach(async () => {
+  before(async () => {
     await browser.url(process.env.BASE_URL);
 
     await LoginPage.login(process.env.USERNAME, process.env.PASSWORD);
   });
 
-  xit("should sort products by name from A to Z", async () => {
+  it("should sort products by name from A to Z", async () => {
     await ProductsPage.sortDropdown.selectByVisibleText("Name (A to Z)");
 
     const productNames = await ProductsPage.productNames.map(
@@ -22,7 +22,7 @@ describe("Product sorting", () => {
     await expect(resolvedNames).toEqual(sortedNames);
   });
 
-  xit("should sort products by name from Z to A", async () => {
+  it("should sort products by name from Z to A", async () => {
     await ProductsPage.sortDropdown.selectByVisibleText("Name (Z to A)");
 
     const productNames = await ProductsPage.productNames.map(
@@ -36,7 +36,7 @@ describe("Product sorting", () => {
     await expect(resolvedNames).toEqual(sortedNames);
   });
 
-  xit("should sort products by price from low to high", async () => {
+  it("should sort products by price from low to high", async () => {
     await ProductsPage.sortDropdown.selectByVisibleText("Price (low to high)");
 
     const prices = await ProductsPage.productPrices.map(async (item) =>
@@ -50,7 +50,7 @@ describe("Product sorting", () => {
     await expect(resolvedPrices).toEqual(sortedPrices);
   });
 
-  xit("should sort products by price from high to low", async () => {
+  it("should sort products by price from high to low", async () => {
     await ProductsPage.sortDropdown.selectByVisibleText("Price (high to low)");
 
     const prices = await ProductsPage.productPrices.map(async (item) =>

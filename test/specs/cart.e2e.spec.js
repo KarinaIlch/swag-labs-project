@@ -3,13 +3,13 @@ import ProductsPage from "../pageObjects/ProductsPage";
 import InventoryPage from "../pageObjects/InventoryPage";
 
 describe("End-to-end test", () => {
-  beforeEach(async () => {
+  before(async () => {
     await browser.url(process.env.BASE_URL);
 
     await LoginPage.login(process.env.USERNAME, process.env.PASSWORD);
   });
 
-  xit("should keep added product in cart after logout and login again", async () => {
+  it("should keep added product in cart after logout and login again", async () => {
     await ProductsPage.addFirstProductToCart();
 
     await expect(ProductsPage.shoppingCartBadge).toHaveText("1");

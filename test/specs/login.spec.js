@@ -3,7 +3,7 @@ import { users } from "../testData/users.js";
 
 describe("Login page", () => {
   users.forEach((user) => {
-    xit(`should login with ${user.username}`, async () => {
+    it(`should login with ${user.username}`, async () => {
       await browser.url("https://www.saucedemo.com");
 
       await LoginPage.login(user.username, user.password);

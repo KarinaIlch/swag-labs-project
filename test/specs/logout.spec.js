@@ -2,13 +2,13 @@ import LoginPage from "../pageObjects/LoginPage";
 import ProductsPage from "../pageObjects/ProductsPage";
 
 describe("Logout functionality", () => {
-  beforeEach(async () => {
+  before(async () => {
     await browser.url(process.env.BASE_URL);
 
     await LoginPage.login(process.env.USERNAME, process.env.PASSWORD);
   });
 
-  xit("should logout user after clicking Logout button from burger menu", async () => {
+  it("should logout user after clicking Logout button from burger menu", async () => {
     await ProductsPage.openBurgerMenu();
 
     await expect(ProductsPage.menuItems).toBeElementsArrayOfSize(4);
