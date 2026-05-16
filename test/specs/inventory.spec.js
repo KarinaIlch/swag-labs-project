@@ -1,6 +1,6 @@
-import LoginPage from "../pageObjects/LoginPage";
-import InventoryPage from "../pageObjects/InventoryPage";
-import ProductsPage from "../pageObjects/ProductsPage";
+import LoginPage from "../pageObjects/loginPage";
+import InventoryPage from "../pageObjects/inventoryPage";
+import ProductsPage from "../pageObjects/productsPage";
 
 describe("Inventory page", () => {
   before(async () => {

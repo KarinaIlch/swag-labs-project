@@ -1,6 +1,6 @@
-import LoginPage from "../pageObjects/LoginPage";
-import ProductsPage from "../pageObjects/ProductsPage";
-import InventoryPage from "../pageObjects/InventoryPage";
+import LoginPage from "../pageObjects/loginPage";
+import ProductsPage from "../pageObjects/productsPage";
+import InventoryPage from "../pageObjects/inventoryPage";
 
 describe("End-to-end test", () => {
   before(async () => {

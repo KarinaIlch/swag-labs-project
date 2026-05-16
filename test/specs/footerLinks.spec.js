@@ -1,5 +1,5 @@
-import LoginPage from "../pageObjects/LoginPage";
-import ProductsPage from "../pageObjects/ProductsPage";
+import LoginPage from "../pageObjects/loginPage";
+import ProductsPage from "../pageObjects/productsPage";
 
 describe("Social links in footer", () => {
   before(async () => {

@@ -1,7 +1,7 @@
-import LoginPage from "../pageObjects/LoginPage";
-import ProductsPage from "../pageObjects/ProductsPage";
-import CartPage from "../pageObjects/InventoryPage";
-import CheckoutPage from "../pageObjects/CheckoutPage";
+import LoginPage from "../pageObjects/loginPage";
+import ProductsPage from "../pageObjects/productsPage";
+import CartPage from "../pageObjects/inventoryPage";
+import CheckoutPage from "../pageObjects/checkoutPage";
 
 describe("Checkout E2E flow", () => {
   before(async () => {
