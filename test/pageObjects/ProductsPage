@@ -1,0 +1,109 @@
+class ProductsPage {
+  get shoppingCartBtn() {
+    return $('[data-test="shopping-cart-link"]');
+  }
+
+  get shoppingCartBadge() {
+    return $(".shopping_cart_badge");
+  }
+
+  get addToCartBtns() {
+    return $$('button[data-test^="add-to-cart"]');
+  }
+
+  get burgerMenuBtn() {
+    return $("#react-burger-menu-btn");
+  }
+
+  get logoutBtn() {
+    return $("#logout_sidebar_link");
+  }
+
+  get menuItems() {
+    return $$(".bm-item.menu-item");
+  }
+
+  get sortDropdown() {
+    return $('[data-test="product-sort-container"]');
+  }
+
+  get productNames() {
+    return $$(".inventory_item_name");
+  }
+
+  get productPrices() {
+    return $$(".inventory_item_price");
+  }
+
+  get twitterLink() {
+    return $('[data-test="social-twitter"]');
+  }
+
+  get facebookLink() {
+    return $('[data-test="social-facebook"]');
+  }
+
+  get linkedinLink() {
+    return $('[data-test="social-linkedin"]');
+  }
+
+  async addFirstProductToCart() {
+    await this.addToCartBtns[0].waitForClickable({
+      timeout: 10000,
+    });
+
+    await this.addToCartBtns[0].click();
+  }
+
+  async clickShoppingCartBtn() {
+    await this.shoppingCartBtn.waitForClickable({
+      timeout: 10000,
+    });
+
+    await this.shoppingCartBtn.click();
+  }
+
+  async openBurgerMenu() {
+    await this.burgerMenuBtn.waitForClickable({
+      timeout: 10000,
+    });
+
+    await this.burgerMenuBtn.click();
+  }
+
+  async logout() {
+    await this.logoutBtn.waitForDisplayed({
+      timeout: 5000,
+    });
+
+    await this.logoutBtn.waitForClickable({
+      timeout: 5000,
+    });
+
+    await this.logoutBtn.click();
+  }
+
+  async clickFooterLink(link) {
+    await link.scrollIntoView();
+
+    await link.waitForClickable({
+      timeout: 10000,
+    });
+
+    await link.click();
+  }
+
+  async clickTwitterLink() {
+    await this.clickFooterLink(this.twitterLink);
+  }
+
+  async clickFacebookLink() {
+    await this.clickFooterLink(this.facebookLink);
+  }
+
+  async clickLinkedinLink() {
+    await this.clickFooterLink(this.linkedinLink);
+  }
+}
+
+export default new ProductsPage();

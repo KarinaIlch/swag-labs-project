@@ -1,4 +1,4 @@
-import LoginPage from "../pageObjects/LoginPage.js";
+import LoginPage from "../pageObjects/LoginPage";
 import { users } from "../testData/users.js";
 
 describe("Login page", () => {

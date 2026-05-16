@@ -1,5 +1,5 @@
-import LoginPage from "../pageObjects/LoginPage.js";
-import InventoryPage from "../pageObjects/InventoryPage.js";
+import LoginPage from "../pageObjects/LoginPage";
+import InventoryPage from "../pageObjects/InventoryPage";
 
 describe("Inventory page", () => {
   beforeEach(async () => {

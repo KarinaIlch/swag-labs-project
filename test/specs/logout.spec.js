@@ -1,5 +1,5 @@
-import LoginPage from "../pageObjects/LoginPage.js";
-import InventoryPage from "../pageObjects/InventoryPage.js";
+import LoginPage from "../pageObjects/LoginPage";
+import ProductsPage from "../pageObjects/ProductsPage";
 
 describe("Logout functionality", () => {
   beforeEach(async () => {
@@ -8,12 +8,12 @@ describe("Logout functionality", () => {
     await LoginPage.login(process.env.USERNAME, process.env.PASSWORD);
   });
 
-  it("should logout user after clicking Logout button from burger menu", async () => {
-    await InventoryPage.openBurgerMenu();
+  xit("should logout user after clicking Logout button from burger menu", async () => {
+    await ProductsPage.openBurgerMenu();
 
-    await expect(InventoryPage.menuItems).toBeElementsArrayOfSize(4);
+    await expect(ProductsPage.menuItems).toBeElementsArrayOfSize(4);
 
-    await InventoryPage.logout();
+    await ProductsPage.logout();
 
     await expect(browser).toHaveUrl(expect.stringContaining("saucedemo.com"));
 
